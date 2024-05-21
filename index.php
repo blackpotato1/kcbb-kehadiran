@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
-<body>⠀⠀⠀⠀
+<body>
     <?php
     require_once 'header.php';
     ?>
