@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+
+#title {
+    background-color: grey;
+    padding: 8px;   
+}   
+
+#name{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+
+}   
+
+#links a{
+    background-color: grey;
+    margin: 0;
+    padding: 9px;
+    border-color: white;
+}
+#links {
+    color: white;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#links a:hover{
+    background-color: black;
+}
