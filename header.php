@@ -14,7 +14,9 @@
         <div id="title">
             <p id="name">Kehadiran Cemerlang Bintang Bersinar</p>
         </div>
-        <div id="links">
+        <?php require_once 'session.php';
+        if (isset($_SESSION["user"]) && $_SESSION["role"] == "admin") {
+            echo '<div id="links">
             <a href="#">Analisis Kehadiran</a>
             <a href="#"><select name="kelas" id="kelas">
                     <option value="kelas">Kelas</option>
@@ -22,7 +24,9 @@
                 </select></a>
             <a href="#">Logout</a>
             <a href="#">Liew Xian Yang</a>
-        </div>
+        </div>';
+        }
+        ?>
     </div>
 </body>
 
