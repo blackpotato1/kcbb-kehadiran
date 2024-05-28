@@ -12,14 +12,14 @@
     <?php
     require_once 'header.php';
     ?>
-    <form id="login-box" action="includes/login.php" method="POST">
-        <h1 id="login-header">LOGIN</h1>
+    <form id="login-box" action="includes/signup.php" method="POST">
+        <h1 id="login-header">Tambah Murid</h1>
         <p>Nama Pengguna</p>
         <input>
         <p>Katalaluan</p>
         <input type="password" id="password" name="password" required>
         <a href="#">Lupa Nama Pengguna atau Katalaluan anda?</a>
-        <button type="submit">LOGIN</button>
+        <button type="submit">TAMBAH</button>
         <?php
         if (isset($_SESSION["error"])) {
             $errors = $_SESSION["error"];
@@ -28,8 +28,6 @@
             }
         }
         ?>
-        <p id="asd">Tidak ada akaun?</p>
-        <a href="#">Daftar sekarang hanya mengambil masa 2 minit</a>
     </form>
 </body>
 
