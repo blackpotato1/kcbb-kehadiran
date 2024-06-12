@@ -11,13 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $stmt->fetch();
 
     if ($user) {
-        header("Location: analisis_kehadirna.php");
+        header("Location: analisis_kehadiran.php");
 
         // change this to your data base name
         // |
         // V
-        $_SESSION["user"] = $user["username"];
-        $_SESSION["role"] = $user["role"];
+        //kcbb_kehadiran["user"] = $user["username"];
+        //kcbb_kehadiran["role"] = $user["role"];
         die();
     } else {
         $errors = [];
