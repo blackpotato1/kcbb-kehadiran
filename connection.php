@@ -1,28 +1,14 @@
 <?php
-date_default_timezone_set("Asia/Kuala_Lumpur");
+date_default_timezone_set("Asia/Kuala_lumpur");
 
-# nama host. localhost merupakan default
 $nama_host = "localhost";
+$nama_sql = "root";
+$pass_sql = "";
 
-# usernama bagi SQL. root merupakan dafault
-$nama_sql  = "root";
+$nama_db = "kehadiran_ahli";
 
-# password bagi SQL. masukkan password anda.
-$pass_sql  = "";
+$condb = mysqli_connect($nama_host, $nama_sql, $pass_sql, $nama_db);
 
-# nama pangkalan data yang anda telah bangunkan sebelum ini.
-$nama_db   = "kcbb_kehadiran";
-
-#membuka hubungan antara pangkalan data dan sistem.
-$condb     = mysqli_connect($nama_host, $nama_sql, $pass_sql, $nama_db);
-
-#menguji adakah hubungan berjaya dibuka
-if (!$condb)
-{
-    die("Sambungan ke pangkalan data gagal")
+if(!$condb){
+    die("Sambung ke pangkalan data gagal");
 }
-else
-{
-    #echo "Sambungan ke pangkalan data berjaya";
-}
-?>

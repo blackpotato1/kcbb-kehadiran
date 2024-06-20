@@ -1,36 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+session_start();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-</head>
-
-<body>
-    <?php
-    require_once 'header.php';
-    ?>
-    <form id="login-box" action="includes/login.php" method="POST">
-        <h1 id="login-header">LOGIN</h1>
-        <p>Nama Pengguna</p>
-        <input>
-        <p>Katalaluan</p>
-        <input type="password" id="password" name="password" required>
-        <a href="#">Lupa Nama Pengguna atau Katalaluan anda?</a>
-        <button type="submit">LOGIN</button>
-        <?php
-        if (isset($_SESSION["error"])) {
-            $errors = $_SESSION["error"];
-            if (isset($errors["not found"])) {
-                echo "<p id='error'>" . $errors["not found"] . "</p>";
-            }
-        }
-        ?>
-        <p id="asd">Tidak ada akaun?</p>
-        <a href="#">Daftar sekarang hanya mengambil masa 2 minit</a>
-    </form>
-</body>
-
-</html>
+include('header.php');
+?>
+<table width='100%'>
+    <tr>
+        <td width='70%' background-color='#7CB9E8'>
+            <img src='banner.jpg' width='100%'>
+        </td>
+        <td text-align='center' background-color="#AFEEEE">
+            <h3>Daftar Sebagai Ahli Kelab</h3>
+            <h3>Klik Pautan Dibawah Untuk Mendaftar</h3>
+            <a ref='sgnup-borang.php'> Daftar Sini</a>
+        </td>
+    </tr>
+</table>
+<?php include('footer.php'); ?>
