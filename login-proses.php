@@ -20,9 +20,9 @@ if (!empty($_POST['nokp']) and !empty($_POST['katalaluan'])) {
         # mengumpukkan kepada pembolehubah session 
         $_SESSION['nokp'] = $m['nokp'];
         $_SESSION['tahap'] = $m['tahap'];
-        $_SESSION['nama']  = $n['nama'];
+        $_SESSION['nama']  = $m['nama'];
         # membukan laman index.php 
-        echo "<script>window.location.href='index.php';(/script>";
+        echo "<script>window.location.href='index.php';</script>";
     } else {
         die("<script>alert('Ralat Nokp atau Katalaluan');
     window.location.href='login-borang.php';</script>");

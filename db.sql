@@ -16,18 +16,17 @@ CREATE TABLE ahli (
     katalaluan VARCHAR(15),
 
     PRIMARY KEY (nokp),
-    FOREIGN KEY (id_kelas)
+
+    FOREIGN KEY (id_kelas) REFERENCES kelas (id_kelas)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE kehadiran (
-    id_aktiviti INT(2),
     nokp VARCHAR(12),
     masa_hadir TIME,
 
-    PRIMARY KEY (id_aktiviti, nokp),
+    PRIMARY KEY (nokp, masa_hadir),
 
-    FOREIGN KEY (nokp)
-    REFERENCES ahli (nokp)
+    FOREIGN KEY (nokp) REFERENCES ahli (nokp)
     ON UPDATE CASCADE ON DELETE CASCADE
-)
+);

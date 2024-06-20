@@ -11,12 +11,10 @@ include('kawalan-admin.php');
 
 <h3>Pengesahan Kehadiran Ahli</h3>
 
-Nama Aktiviti : <?= $n['nama_aktivti'] ?> <br>
-Tarikh | Masa : <?= $n['tarikh-aktivti'] . " | " . $n['masa_mula'] ?><br>
 <br><br>
 
 <?php include('butang-saiz.php'); ?>
-<form action='kehadiran-proses.php?id_aktiviti=<?= $_GET['id_aktiviti'] ?>' method='POST'>
+<form action='kehadiran-proses.php' method='POST'>
     <table border='1' id='saiz' width='100%'>
         <tr>
             <td>Bil</td>

@@ -68,7 +68,7 @@ if (!empty($_POST['nokp'])) {
     $bil = 0;
 
     # Proses untuk memaparkan data kehadiran dalam bentuk jadual
-    $arahan_sql_kehadiran = "select* from ahli,aktiviti,kehadiran,kelas
+    $arahan_sql_kehadiran = "select* from ahli,kehadiran,kelas
 where ahli.nokp = kehadiran.nokp
 and ahli.id_kelas = kelas.id_kelas
 order by kehadiran.masa_hadir DESC";

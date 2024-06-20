@@ -5,11 +5,11 @@ include('connection.php');
 
 $masa = date("H:i:s");
 
-# Menyemak kewujudan data GET id_aktiviti
-if (!empty($_GET['id_aktiviti']) and !empty($_SESSION['nokp'])) {
+# Menyemak kewujudan data 
+if (!empty($_SESSION['nokp'])) {
 
     # Arahan Simpan data kehadiran
-    $sql = "insert into kehadiran (id_aktiviti, nokp, masa_hadir) values ('" . $_GET['id_aktiviti'] . "', '" . $_SESSION['nokp'] . "', '$masa')";
+    $sql = "insert into kehadiran (nokp, masa_hadir) values ('" . $_SESSION['nokp'] . "', '$masa')";
 
     # Laksana arahan Simpan
     $simpan_data = mysqli_query($condb, $sql);

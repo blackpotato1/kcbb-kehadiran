@@ -23,30 +23,9 @@ if (empty($_SESSION['nokp'])) {
                 <caption>
                     Pengesahan Kendiri hanya boleh dilakukan pada tarikh aktiviti dilaksanakan sahaja
                 </caption>
-                <tr align='center' bgcolor='yellow'>
-                    <td>Nama Aktiviti</td>
-                    <td>Tarikh | Masa</td>
-                    <td>Kehadiran</td>
-                </tr>
-                <?php
-                # arahan query untuk mencari senarai Aktiviti
-                $arahan_papar = "select * from aktiviti";
-
-                # laksanakan arahan mencari data aktiviti
-                $laksana = mysqli_query($condb, $arahan_papar);
-
-                # Mengambil data yang ditemui
-                while ($m = mysqli_fetch_array($laksana)) {
-                    # memaparkan senarai nama dalam jadual
-                    echo "<tr>
-                        <td>" . $m['nama_aktiviti'] . "</td>
-                        <td>" . $m['tarikh_aktiviti'] . " | " . $m['masa_mula'] . "</td>
-                        <td align='center'>";
-                }
-                ?>
                 <?php
                 # Arahan mendapatkan data kehadiran ahli bagi setiap aktiviti
-                $arahan_sql_hadir = "select * from kehadiran where nokp ='" . $_SESSION['nokp'] . "' and id_aktiviti ='" . $m['id_aktiviti'] . "'";
+                $arahan_sql_hadir = "select * from kehadiran where nokp ='" . $_SESSION['nokp'] . "';";
 
                 # melaksanakan arahan sql mendapatkan data
                 $laksana_hadir = mysqli_query($condb, $arahan_sql_hadir);
@@ -55,11 +34,6 @@ if (empty($_SESSION['nokp'])) {
                     echo "&#9989;";
                 } else {
                     echo "&#10060;<br>";
-                }
-
-                if (date("Y-m-d") == $m['tarikh_aktiviti']) {
-                    # Pengesahan Kehadiran Kendiri
-                    echo "<a href='profil-sahkendiri.php?id_aktiviti=" . $m['id_aktiviti'] . "'>[ PENGESAHAN KENDIRI ]</a>";
                 }
 
                 echo "</td></tr>";

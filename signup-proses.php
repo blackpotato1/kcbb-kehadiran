@@ -2,7 +2,7 @@
 # memulakan fungsi SESSION 
 session_start();
 # menyemak kewujudan data post 
-if (empty($_POST)) {
+if (!empty($_POST)) {
     # Memanggil fail Connection.php 
     include 'connection.php';
     # Mengambil data yang_dihantar dari fa. gnup-borang.php ' 
@@ -20,7 +20,7 @@ if (empty($_POST)) {
     # menyemak adakah nokp yang dimasukkan telah wujud dalam pangkalan data 
     $arahan_sql_semak = "select * from ahli where nokp='$nokp' limit 1";
     $laksana_arahan_semak = mysqli_query($condb, $arahan_sql_semak);
-    if (mysqli_num_rows($laksana_arahan_senak) == 1)
+    if (mysqli_num_rows($laksana_arahan_semak) == 1)
         # jika nokp yang dimasukkan telah wujud. aturcara akan dihentikan.
         die("<script>alert('RALAT NOKP. Nokp yang dimasukkan telah digunakan');
     window.location.href:'signup-borang.php';  </script>");

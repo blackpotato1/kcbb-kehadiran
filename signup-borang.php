@@ -9,7 +9,7 @@ include('connection.php');
 <h3> Pendaftaran ahli Baru </h3>
 
 <!-- Borang Pendaftaran ahli Baru-->
-<form actio='signup-proses.php' method='POST'>
+<form action='signup-proses.php' method='POST'>
     Nama ahli
     <input type='text' name='nama' required><br>
     Nokp ahli
@@ -27,7 +27,7 @@ include('connection.php');
 </option>";
         } ?>
     </select> <br>
-    Katalaluan <input type='password' nama='katalaluan' required> <br>
-    <input type=' submit' value='Daftar'>
+    Katalaluan <input type='password' name='katalaluan' required> <br>
+    <input type='submit' value='Daftar'>
 </form>
 <?php include('footer.php'); ?>

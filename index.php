@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 include('header.php');
@@ -11,7 +11,7 @@ include('header.php');
         <td text-align='center' background-color="#AFEEEE">
             <h3>Daftar Sebagai Ahli Kelab</h3>
             <h3>Klik Pautan Dibawah Untuk Mendaftar</h3>
-            <a ref='sgnup-borang.php'> Daftar Sini</a>
+            <a href='signup-borang.php'> Daftar Sini</a>
         </td>
     </tr>
 </table>
