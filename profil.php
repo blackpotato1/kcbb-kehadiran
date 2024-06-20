@@ -20,9 +20,6 @@ if (empty($_SESSION['nokp'])) {
             <h3>Rekod Kehadiran</h3>
             <!-- Header bagi jadual untuk memaparkan senarai aktiviti -->
             <table align='center' width='100%' border='1' id='saiz' bgcolor='white'>
-                <caption>
-                    Pengesahan Kendiri hanya boleh dilakukan pada tarikh aktiviti dilaksanakan sahaja
-                </caption>
                 <?php
                 # Arahan mendapatkan data kehadiran ahli bagi setiap aktiviti
                 $arahan_sql_hadir = "select * from kehadiran where nokp ='" . $_SESSION['nokp'] . "';";

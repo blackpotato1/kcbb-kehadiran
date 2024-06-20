@@ -13,6 +13,7 @@
 <?php } else if (!empty($_SESSION['tahap']) && $_SESSION['tahap'] == "AHLI BIASA") { ?>
     <a href='index.php'>Laman Utama</a>
     <a href='profil.php'>Profil</a>
+    <a href='kehadiran-isi.php'>Isi Kehadiran</a>
     <a href='logout.php'>logout</a>
 <?php } else { ?>
     <a href='index.php'>Laman Utama</a>

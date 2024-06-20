@@ -32,52 +32,51 @@ include('kawalan-admin.php');
         <td width='10%'>Xthap</td>
         <td width='20%'>Tindakan</td>
     </tr>
-</table>
 
-<?php
-# syarat tambahan yang akan dimasukkan dalam arahan(query) senarai ahli
-$tambahan = "";
-if (!empty($_POST['nama'])) {
-    $tambahan = " and ahli.nama like '%" . $_POST['nama'] . "%'";
-}
-# arahan query untuk mencari senarai nama ahli
-$arahan_papar = "select * from ahli, kelas
+    <?php
+    # syarat tambahan yang akan dimasukkan dalam arahan(query) senarai ahli
+    $tambahan = "";
+    if (!empty($_POST['nama'])) {
+        $tambahan = " and ahli.nama like '%" . $_POST['nama'] . "%'";
+    }
+    # arahan query untuk mencari senarai nama ahli
+    $arahan_papar = "select * from ahli, kelas
 where ahli.id_kelas = kelas.id_kelas
 $tambahan ";
 
-# laksanakan arahan mencari data ahli
-$laksana = mysqli_query($condb, $arahan_papar);
+    # laksanakan arahan mencari data ahli
+    $laksana = mysqli_query($condb, $arahan_papar);
 
-# Mengambil data yang ditemui
-while ($m = mysqli_fetch_array($laksana)) {
-    # umpukkan data kepada tatasusunan bagi tujuan kemaskini ahli
-    $data_get = array(
-        'nama'       => $m['nama'],
-        'nokp'       => $m['nokp'],
-        'katalaluan' => $m['katalaluan'],
-        'tahap'      => $m['tahap'],
-        'id_kelas'   => $m['id_kelas'],
-        'ting'       => $m['ting'],
-        'nama_kelas' => $m['nama_kelas']
-    );
+    # Mengambil data yang ditemui
+    while ($m = mysqli_fetch_array($laksana)) {
+        # umpukkan data kepada tatasusunan bagi tujuan kemaskini ahli
+        $data_get = array(
+            'nama'       => $m['nama'],
+            'nokp'       => $m['nokp'],
+            'katalaluan' => $m['katalaluan'],
+            'tahap'      => $m['tahap'],
+            'id_kelas'   => $m['id_kelas'],
+            'ting'       => $m['ting'],
+            'nama_kelas' => $m['nama_kelas']
+        );
 
-    # memaparkan senarai nama dalam jadual
-    echo "<tr>
+        # memaparkan senarai nama dalam jadual
+        echo "<tr>
     <td>" . $m['nama'] . "</td>
     <td>" . $m['nokp'] . "</td>
     <td>" . $m['ting'] . "-" . $m['nama_kelas'] . "</td>
     <td>" . $m['katalaluan'] . "</td>
     <td>" . $m['tahap'] . "</td> ";
 
-    # memaparkan navigasi untuk kemaskini dan hapus data ahli
-    echo "<td>
+        # memaparkan navigasi untuk kemaskini dan hapus data ahli
+        echo "<td>
     <a href='ahli-kemaskini-borang.php?" . http_build_query($data_get) . "'>Kemaskini</a>
     |
     <a href='ahli-padam-proses.php?nokp=" . $m['nokp'] . "'
     onclick=\"return confirm('Anda pasti anda ingin memadam data ini.')\">Hapus</a>
     </td>
     </tr>";
-}
-?>
+    }
+    ?>
 </table>
 <?php include('footer.php'); ?>

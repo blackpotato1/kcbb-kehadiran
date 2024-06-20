@@ -23,7 +23,7 @@ if (!empty($_POST)) {
     if (mysqli_num_rows($laksana_arahan_semak) == 1)
         # jika nokp yang dimasukkan telah wujud. aturcara akan dihentikan.
         die("<script>alert('RALAT NOKP. Nokp yang dimasukkan telah digunakan');
-    window.location.href:'signup-borang.php';  </script>");
+    window.location.href='signup-borang.php';  </script>");
     # arahan SQL (query) untuk menyimpan data ahli baru 
     $arahan_sql_simpan = "insert into ahli (nokp, nama, id_kelas, katalaluan, tahap) values
     ('$nokp', '$nama', '$id_kelas', '$katalaluan','AHLI BIASA') ";
@@ -37,7 +37,7 @@ if (!empty($_POST)) {
     # jika data tidak berjaya disimpan. papar popup dan buka fail signup-borang
     {
         echo "<script> alert('Pendaftaran Gagal'); 
-window. location.href='signup-borang.php'; </script>";
+window.location.href='signup-borang.php'; </script>";
     }
 } else { # jika pengguna buka fail ini tanpa mengisi data.
     # papar popup dan buka fail signup-borang.php
