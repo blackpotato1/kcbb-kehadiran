@@ -1,4 +1,4 @@
-CREATE DATABASE kehadiran_ahli;
+CREATE DATABASE kcbb_kehadiran;
 
 CREATE TABLE kelas (
     id_kelas INT(2) AUTO_INCREMENT,

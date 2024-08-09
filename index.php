@@ -6,7 +6,7 @@ include('header.php');
 <table width='100%'>
     <tr>
         <td width='70%' background-color='#7CB9E8'>
-            <img src='banner.jpg' width='100%'>
+            <img src='banner.jpg' width='90%'>
         </td>
         <td text-align='center' background-color="#AFEEEE">
             <h3>Daftar Sebagai Ahli Kelab</h3>

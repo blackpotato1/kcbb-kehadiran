@@ -43,14 +43,6 @@ if (empty($_SESSION['nokp'])) {
                 Nama : <?= $_SESSION['nama'] ?><br>
                 Nokp : <?= $_SESSION['nokp'] ?><br>
             </p>
-            <?php
-            # mengambil data untuk dijadikan QR code atau bar code
-            $data = $_SESSION['nokp'];
-            $saiz = "200x200";
-            # set umpukkan data API untuk memaparkan QR kod
-            $qr_api = "https://chart.googleapis.com/chart?chs=" . $saiz . "&cht=qr&chl=" . $data;
-            echo "<div align='center'><img width='50%' src='" . $qr_api . "'></div>";
-            ?>
             <br>
         </td>
     </tr>

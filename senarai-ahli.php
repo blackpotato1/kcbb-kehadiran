@@ -68,8 +68,8 @@ $tambahan ";
     <td>" . $m['katalaluan'] . "</td>
     <td>" . $m['tahap'] . "</td> ";
 
-        # memaparkan navigasi untuk kemaskini dan hapus data ahli
-        echo "<td>
+    # memaparkan navigasi untuk kemaskini dan hapus data ahli
+    echo "<td>
     <a href='ahli-kemaskini-borang.php?" . http_build_query($data_get) . "'>Kemaskini</a>
     |
     <a href='ahli-padam-proses.php?nokp=" . $m['nokp'] . "'

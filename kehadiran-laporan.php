@@ -13,7 +13,7 @@ include('kawalan-admin.php');
 <table align='center' width='100%' border='1' id='saiz'>
     <tr bgcolor='cyan'>
         <td colspan='3'>
-            <form action='kehadiran-laporan.php?id_aktiviti=<?= $id_aktiviti; ?>' method='POST' style='margin:0; padding:0;'>
+            <form action='kehadiran-laporan.php' method='POST' style='margin:0; padding:0;'>
                 <input type='text' name='nama' placeholder='Carian Nama Ahli'>
                 <input type='submit' value='Cari'>
             </form>
@@ -32,20 +32,24 @@ include('kawalan-admin.php');
 
     <?php
     # syarat tambahan yang akan dimasukkan dalam arahan(query) senarai ahli
-    $tambahan = "";
+    $query = "";
     if (!empty($_POST['nama'])) {
-        $tambahan = " where ahli.nama like '%" . $_POST['nama'] . "%'";
+        $query = $_POST['nama'];
+    } else {
+        $query = "%";
     }
 
     # arahan query untuk mencari senarai Aktiviti
     $arahan_papar = "
-SELECT * , ahli.nokp
+SELECT * 
 FROM ahli
 LEFT JOIN kelas
 ON ahli.id_kelas = kelas.id_kelas
 LEFT JOIN kehadiran
 ON ahli.nokp = kehadiran.nokp
-ORDER BY ahli.nama ";
+WHERE ahli.nama LIKE '%$query%'
+ORDER BY ahli.nama";
+
 
     $laksana = mysqli_query($condb, $arahan_papar);
     $hadir = $takhadir = $bil = 0;
@@ -64,6 +68,6 @@ ORDER BY ahli.nama ";
             echo "&#10060;";
         }
     }
-    echo "</table>";
     ?>
-    <?php include 'footer.php'; ?>
+</table>
+<?php include 'footer.php'; ?>

@@ -17,6 +17,11 @@ if (!empty($_POST)) {
         die("<script>alert (' Ralat Pada No Kad Pengenalan');
  window.location.href='signup-borang.php';</script>");
     }
+    # ralat tiada kelas
+    if (isset($id_kelas) == false) {
+        die("<script>alert (' Sila Pilih Kelas');
+    window.location.href='signup-borang.php';</script>");
+    }
     # menyemak adakah nokp yang dimasukkan telah wujud dalam pangkalan data 
     $arahan_sql_semak = "select * from ahli where nokp='$nokp' limit 1";
     $laksana_arahan_semak = mysqli_query($condb, $arahan_sql_semak);
@@ -42,5 +47,5 @@ window.location.href='signup-borang.php'; </script>";
 } else { # jika pengguna buka fail ini tanpa mengisi data.
     # papar popup dan buka fail signup-borang.php
     echo "<script>alert('sila lengkapkan maklumat');
-window. location.href='signup-borang.php'; </script>";
+window.location.href='signup-borang.php'; </script>";
 }

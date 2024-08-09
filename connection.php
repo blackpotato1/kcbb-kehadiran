@@ -5,7 +5,7 @@ $nama_host = "localhost";
 $nama_sql = "root";
 $pass_sql = "";
 
-$nama_db = "kehadiran_ahli";
+$nama_db = "kcbb_kehadiran";
 
 $condb = mysqli_connect($nama_host, $nama_sql, $pass_sql, $nama_db);
 

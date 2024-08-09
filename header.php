@@ -1,5 +1,6 @@
-<h1>KELAB KOMPUTER SMK KOTA KEMUNING</h1>
-<p>Sistem Pengesahan Kehadiran Ahli</p>
+<h1>SMK BERSINAR BINTANG</h1>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
 
 <hr>
 
